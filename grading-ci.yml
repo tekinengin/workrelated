@@ -2,5 +2,4 @@ build-job:
   stage: build
   script:
     - echo "Hello, $GITLAB_USER_LOGIN!"
-    - echo "$TESTING_DOCKER_IMAGE"
-    - echo "$TESTING_BASE_URL"
+    - echo "$TEST"
