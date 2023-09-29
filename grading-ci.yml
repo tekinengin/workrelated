@@ -1,6 +1,7 @@
 build-job:
-  stage: build
+  stage: grading
   script:
     - echo "Hello, $GITLAB_USER_LOGIN!"
+    - echo "You should not be creating merge request :("
   rules:
-    - when: manuel
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
