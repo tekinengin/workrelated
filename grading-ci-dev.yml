@@ -1,0 +1,13 @@
+stages:
+  - warning
+  - ok_to_submit
+  - test
+  - grade
+
+build-job:
+  stage: warning
+  script:
+    - echo "Hello, $GITLAB_USER_LOGIN!"
+    - echo "You should not be creating merge request :("
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'push'
