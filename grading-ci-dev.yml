@@ -3,14 +3,14 @@ stages:
 
 build-job:
   stage: grade
-  image: "$TESTING_DOCKER_IMAGE"
+  image: $TESTING_DOCKER_IMAGE
   script:
-    - echo "$CI_PROJECT_NAME"
-    - git clone "$PRIVATE_TEST_REPO"
+    - echo $CI_PROJECT_NAME
+    - git clone $PRIVATE_TEST_REPO
     - cd pa{$PA}
-    - python3 ../gradepy/grade.py --grade --pa "$PA" -v debug --user "$CI_PROJECT_NAME"
+    - python3 ../gradepy/grade.py --grade --pa $PA -v debug --user $CI_PROJECT_NAME
   rules:
     - if: $CI_PIPELINE_SOURCE == "api"
   artifacts:
-    path: 
-      - {$PA}_grade_breakdown.txt
+    paths: 
+      - $PA.txt
