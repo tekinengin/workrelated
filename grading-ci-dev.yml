@@ -3,6 +3,7 @@ stages:
 
 build-job:
   stage: grade
+  image: "$TESTING_DOCKER_IMAGE"
   script:
     - echo "$CI_PROJECT_NAME"
     - pwd
