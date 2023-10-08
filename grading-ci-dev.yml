@@ -10,7 +10,7 @@ build-job:
     - git clone https://git.ucsc.edu/etekin/gradepy.git
     - cd pa1
     - ls .
-    - ls gradepy/pa1/files
+    - ls ../gradepy/pa1/files
     - python3 ../gradepy/grade.py --grade --pa 1 -v debug --user "$CI_PROJECT_NAME"
     - ls .
   rules:
