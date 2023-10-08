@@ -8,9 +8,10 @@ build-job:
     - echo $CI_PROJECT_NAME
     - git clone $PRIVATE_TEST_REPO
     - cd pa{$PA}
-    - python3 ../gradepy/grade.py --grade --pa $PA -v debug --user $CI_PROJECT_NAME
+    - python3 ../gradepy/grade.py --grade --pa $PA -v debug --user $CI_PROJECT_NAME --commit $CI_COMMIT_SHA
   rules:
     - if: $CI_PIPELINE_SOURCE == "api"
   artifacts:
     paths: 
-      - $PA.txt
+      - ${PA}_grade.txt
+      - ${PA}_debug.txt
