@@ -7,7 +7,7 @@ build-job:
   script:
     - echo "$CI_PROJECT_NAME"
     - pwd
-    - git clone git@git.ucsc.edu:etekin/gradepy.git
+    - git clone https://git.ucsc.edu/etekin/gradepy.git
     - cd pa1
     - python3 ../gradepy/grade.py --grade --pa 1 -v grade --user "$CI_PROJECT_NAME"
   rules:
