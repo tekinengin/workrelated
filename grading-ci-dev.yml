@@ -8,6 +8,6 @@ build-job:
   stage: warning
   script:
     - echo "Hello, $GITLAB_USER_LOGIN!"
-    - echo "You should not be creating merge request :("
+    - echo "$CI_PROJECT_NAME"
   rules:
     - if: $CI_PIPELINE_SOURCE == 'push'
