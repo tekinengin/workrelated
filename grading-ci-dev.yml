@@ -6,8 +6,10 @@ build-job:
   image: "$TESTING_DOCKER_IMAGE"
   script:
     - echo "$CI_PROJECT_NAME"
-    - git clone https://git.ucsc.edu/etekin/gradepy.git
-    - cd pa1
-    - python3 ../gradepy/grade.py --grade --pa 1 -v debug --user "$CI_PROJECT_NAME"
+    - git clone "$PRIVATE_TEST_REPO"
+    - cd pa{$PA}
+    - python3 ../gradepy/grade.py --grade --pa "$PA" -v debug --user "$CI_PROJECT_NAME"
   rules:
-    - if: $CI_PIPELINE_SOURCE == 'api'
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+  artifacts:
+    path: {$PA}_grade_breakdown.txt
