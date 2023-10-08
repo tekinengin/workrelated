@@ -9,6 +9,6 @@ build-job:
     - pwd
     - git clone https://git.ucsc.edu/etekin/gradepy.git
     - cd pa1
-    - python3 ../gradepy/grade.py --grade --pa 1 -v grade --user "$CI_PROJECT_NAME"
+    - python3 ../gradepy/grade.py --grade --pa 1 -v debug --user "$CI_PROJECT_NAME"
   rules:
     - if: $CI_PIPELINE_SOURCE == 'push'
