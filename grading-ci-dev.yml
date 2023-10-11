@@ -14,4 +14,4 @@ build-job:
   artifacts:
     paths: 
       - pa${PA}/${PA}_grade.txt
-      - pa${PA}${PA}_debug.txt
+      - pa${PA}/${PA}_debug.txt
