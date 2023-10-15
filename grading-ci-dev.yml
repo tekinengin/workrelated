@@ -13,5 +13,5 @@ build-job:
     - if: $CI_PIPELINE_SOURCE == "api"
   artifacts:
     paths: 
-      - pa${PA}/${PA}_grade.txt
-      - pa${PA}/${PA}_debug.txt
+      - pa${PA}/PA${PA}_grade.txt
+      - pa${PA}/PA${PA}_debug.txt
