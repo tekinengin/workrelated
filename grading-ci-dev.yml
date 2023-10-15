@@ -7,7 +7,7 @@ build-job:
   script:
     - echo $CI_PROJECT_NAME
     - git clone $PRIVATE_TEST_REPO
-    - cd pa{$PA}
+    - cd pa${PA}
     - python3 ../gradepy/grade.py --grade --pa $PA --user $CI_PROJECT_NAME --commit $CI_COMMIT_SHA
   rules:
     - if: $CI_PIPELINE_SOURCE == "api"
