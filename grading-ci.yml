@@ -12,5 +12,5 @@ grade:
     - if: $CI_PIPELINE_SOURCE == "api"
   artifacts:
     paths: 
-      - pa${PA}/PA${PA}_grade.txt
-      - pa${PA}/PA${PA}_debug.txt
+      - PA${PA}_grade.txt
+      - PA${PA}_debug.txt
