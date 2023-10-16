@@ -1,14 +1,14 @@
 stages:
   - grade
 
-build-job:
+grade:
   stage: grade
   image: $TESTING_DOCKER_IMAGE
   script:
     - echo $CI_PROJECT_NAME
     - git clone $PRIVATE_TEST_REPO
     - cd pa${PA}
-    - python3 ../gradepy/grade.py --grade --pa $PA --user $CI_PROJECT_NAME --commit $CI_COMMIT_SHA
+    - python3 ../gradepy/grade.py --grade --pa $PA --user $CI_PROJECT_NAME --commit $COMMIT
   rules:
     - if: $CI_PIPELINE_SOURCE == "api"
   artifacts:
