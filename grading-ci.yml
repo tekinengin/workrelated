@@ -6,8 +6,10 @@ grade:
   image: $TESTING_DOCKER_IMAGE
   script:
     - echo $CI_PROJECT_NAME
+    - ls
     - git clone $PRIVATE_TEST_REPO
     - git stash --all
+    - ls
     - python3 gradepy/grade.py --grade --pa $PA --user $CI_PROJECT_NAME --commit $COMMIT
   rules:
     - if: $CI_PIPELINE_SOURCE == "api"
